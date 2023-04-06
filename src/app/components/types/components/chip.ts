@@ -16,7 +16,7 @@ export type icon = ReactNode;
 export type show = boolean;
 export type dismissible = {
   action?: ReactNode;
-  onClose: (e) => void;
+  onClose: (e, v) => void;
 };
 export type animate = animation;
 export type className = string;

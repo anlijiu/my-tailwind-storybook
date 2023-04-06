@@ -48,11 +48,11 @@ export interface ChipProps extends Omit<MotionProps, "animate"> {
   animate?: animate;
   className?: className;
   value: value;
-  children?: ReactNode;
+  // children?: ReactNode;
 }
 
 export const Chip = React.forwardRef<HTMLDivElement, ChipProps>(
-  ({ variant, color, icon, show, dismissible, animate, className, value, children, ...rest }, ref) => {
+  ({ variant, color, icon, show, dismissible, animate, className, value, ...rest }, ref) => {
     // 1. init
     const { chip } = useTheme();
     const { defaultProps, valid, styles } = chip;
@@ -120,16 +120,13 @@ export const Chip = React.forwardRef<HTMLDivElement, ChipProps>(
             {icon && iconTemplate}
             <div className={`${icon ? "ml-4" : ""} ${dismissible ? "mr-5" : ""} mt-px`}>
               {value}
-              <div>
-              { children }
-              </div>
             </div>
             {dismissible && (
               <div className={chipCloseButtonClasses}>
                 <div
                   ref={rippleRef}
                   role="button"
-                  onClick={dismissible.onClose}
+                  onClick={e=>dismissible.onClose(e, value)}
                   className={`w-5 h-5 ${dismissible.action ? "" : "p-1"}`}
                 >
                   {dismissible.action || (
