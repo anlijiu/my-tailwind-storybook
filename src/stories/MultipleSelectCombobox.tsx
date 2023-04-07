@@ -13,6 +13,7 @@ export const MultipleSelectCombobox = (props) => {
     selected,
     onSelected,
     onDeleteSelect,
+    inputClassName = "text-sm",
   } = props;
   
   const [candidates, setCandidates] = useState([])
@@ -35,8 +36,8 @@ export const MultipleSelectCombobox = (props) => {
     onSelected(value);
   }
 
-  const handleTagClicked = (t) => {
-    console.log("onTagClicked: ", t)
+  const handleTagClicked = (t, v) => {
+    console.log("onTagClicked: ", t, v)
   }
 
   const handleTagDelete = (e, v, value) => {
@@ -68,6 +69,7 @@ export const MultipleSelectCombobox = (props) => {
         </ul>
       )
     }
+    return null;
   }
 
   return (
@@ -78,6 +80,7 @@ export const MultipleSelectCombobox = (props) => {
             { multiple && renderMultipleSelected() }
             <Combobox.Input
               as={Input}
+              className={inputClassName}
               displayValue={(v) => v[optionKey]}
               onChange={(event) => onInputChange(event.target.value)}
               icon={

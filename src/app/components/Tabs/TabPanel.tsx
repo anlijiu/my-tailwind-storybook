@@ -46,7 +46,7 @@ export const TabPanel = React.forwardRef<HTMLDivElement, TabPanelProps>(
 
     // 5. return
     return (
-      <NewAnimatePresence exitBeforeEnter>
+      <NewAnimatePresence mode='wait'>
         <motion.div
           {...rest}
           ref={ref}
