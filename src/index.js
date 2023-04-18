@@ -1,3 +1,6 @@
+// import 'core-js/actual';
+// import 'core-js/actual/index.js';
+import "core-js";
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';

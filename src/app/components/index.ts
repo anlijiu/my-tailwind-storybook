@@ -22,3 +22,4 @@ export * from "./FloatingButton";
 export * from "./ListView";
 export * from "./Notification";
 export * from "./Combobox";
+export * from "./ColumnsListView";

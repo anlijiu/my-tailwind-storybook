@@ -6,6 +6,7 @@ module.exports = {
     "../src/**/*.stories.@(js|jsx|ts|tsx)"
   ],
   "addons": [
+    "@storybook/addon-actions",
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
@@ -21,8 +22,12 @@ module.exports = {
 
     return config;
   },
-  "framework": "@storybook/react",
+  // "framework": "@storybook/react",
+  "framework": {
+    name: '@storybook/react-webpack5',
+    options: { fastRefresh: true },
+  },
   "core": {
     "builder": "@storybook/builder-webpack5"
-  }
+  },
 }

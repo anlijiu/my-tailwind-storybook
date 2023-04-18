@@ -1,7 +1,10 @@
-import { addDecorator } from '@storybook/react';
+import './polyfill';
+
 import Layout from './Layout';
 
-addDecorator(storyFn => <Layout>{storyFn()}</Layout>);
+const WithLayout = storyFn => <Layout>{storyFn()}</Layout>;
+
+export const decorators = [WithLayout];
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },

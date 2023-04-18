@@ -42,7 +42,7 @@ export const MultipleSelectList = (props) => {
       return selectedValue[optionKey]
     }
 
-    if (selectedValue.length == 0) {
+    if (selectedValue.length === 0) {
       return placeholder
     } else {
       return selectedValue.map(v => v[optionKey]).join(', ')
